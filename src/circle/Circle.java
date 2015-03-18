@@ -47,12 +47,12 @@ public class Circle {
 	}
 	
 	public double getXtop(){
-		return this.xc - this.r;
+		return this.xc + this.r;
 	}
 	
 	public double getYtop(){
 		
-		return this.yc - this.r;
+		return this.yc + this.r;
 	}
 
 	@Override
@@ -89,7 +89,7 @@ public class Circle {
 
 	@Override
 	public String toString() {
-		return "Coordinate centro: ("+xc+","+yc+")  Raggio="+r;
+		return "Coordinate centro: ("+this.xc+","+this.yc+")  Raggio="+this.r;
 	}
 	
 	public boolean contains (Circle cerchio){
