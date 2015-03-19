@@ -1,4 +1,9 @@
-package circle;
+package geometricshape;
+/**
+ * 
+ * @author Carfagna Lorenzo
+ *
+ */
 
 public class Circle {
 	
@@ -6,51 +11,89 @@ public class Circle {
 	private double yc;
 	private double r;
 	
+	/**
+	 * 
+	 * @param xc
+	 * @param yc
+	 * @param r
+	 * inizializza l'istanza ai parametri formali
+	 */
 	public Circle(double xc, double yc, double r) {
 		this.xc = xc;
 		this.yc = yc;
-		if(r<=0) throw new IllegalArgumentException("Il raggio non può essere negativo");
+		if(r<=0) throw new IllegalArgumentException("Il raggio deve essere maggiore di 0");
 		else this.r = r;
 	}
 	
+	/**
+	 * restituisce la coordinata X del centro
+	 * @return
+	 */
 	public double getXc() {
 		return xc;
 	}
-	
+	/**
+	 * setta la coordinata X del centro
+	 * @param xc
+	 */
 	public void setXc(double xc) {
 		this.xc = xc;
 	}
-	
+	/**
+	 * restituisce la coordinata Y del centro
+	 * @return
+	 */
 	public double getYc() {
 		return yc;
 	}
-	
+	/**
+	 * setta la coordinata Y del centro
+	 * @param yx
+	 */
 	public void setYc(double yx) {
 		this.yc = yx;
 	}
-	
+	/**
+	 * restituisce il valore del raggio
+	 * @return
+	 */
 	public double getR() {
 		return r;
 	}
-	
+	/**
+	 * setta il valore del raggio
+	 * @param r
+	 */
 	public void setR(double r) {
-		if(r<=0) throw new IllegalArgumentException("Il raggio non può essere negativo");
+		if(r<=0) throw new IllegalArgumentException("Il raggio deve essere maggiore di 0");
 		this.r = r;
 	}
-
-	public double getXbot(){
+	/**
+	 * ritorna la coordinata X dell'angolo in basso a sinistra della bounding box
+	 * @return
+	 */
+	public double getXmin(){
 		return this.xc - this.r;
 	}
-	
-	public double getYbot(){
+	/**
+	 * ritorna la coordinata Y dell'angolo in basso a sinistra della bounding box
+	 * @return
+	 */
+	public double getYmin(){
 		return this.yc - this.r;
 	}
-	
-	public double getXtop(){
+	/**
+	 * ritorna la coordinata X dell'angolo in alto a destra della bounding box
+	 * @return
+	 */
+	public double getXmax(){
 		return this.xc + this.r;
 	}
-	
-	public double getYtop(){
+	/**
+	 * ritorna la coordinata Y dell'angolo in alto a destra della bounding box
+	 * @return
+	 */
+	public double getYmax(){
 		
 		return this.yc + this.r;
 	}
@@ -68,7 +111,12 @@ public class Circle {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
-
+	/**
+	 * Ritorna VERO se i campi dell'oggetto invocante e 
+	 * di quello ricevuto come parametro sono uguali
+	 * altrimenti FALSO
+	 * @return
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -91,12 +139,17 @@ public class Circle {
 	public String toString() {
 		return "Coordinate centro: ("+this.xc+","+this.yc+")  Raggio="+this.r;
 	}
-	
+	/**
+	 * Restituisce VERO se la bounding box dell'oggetto 
+	 * invocante CONTIENE quella dell'oggetto ricevuto come parametro.
+	 * @param cerchio
+	 * @return
+	 */
 	public boolean contains (Circle cerchio){
 		boolean ritorna=false;
 		
-		if((this.getXbot()<=cerchio.getXbot()&&this.getYbot()<=cerchio.getYbot())
-		  &&(this.getXtop()>=cerchio.getXtop()&&this.getYtop()>=cerchio.getYtop()))
+		if((this.getXmin()<=cerchio.getXmin()&&this.getYmin()<=cerchio.getYmin())
+		  &&(this.getXmax()>=cerchio.getXmax()&&this.getYmax()>=cerchio.getYmax()))
 			ritorna=true;
 		
 		return ritorna;
