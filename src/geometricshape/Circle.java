@@ -114,7 +114,7 @@ public class Circle {
 	/**
 	 * restituisce VERO se i campi dell'oggetto invocante e 
 	 * di quello ricevuto come parametro sono uguali
-	 * altrimenti FALSO
+	 * altrimenti restituisce FALSO
 	 * @return
 	 */
 	@Override
@@ -149,7 +149,9 @@ public class Circle {
 		boolean ritorna=false;
 		
 		if((this.getXMin()<=cerchio.getXMin()&&this.getYMin()<=cerchio.getYMin())
-		  &&(this.getXMax()>=cerchio.getXMax()&&this.getYMax()>=cerchio.getYMax()))
+		    &&(this.getXMax()>=cerchio.getXMax()&&this.getYMax()>=cerchio.getYMax()))
+					
+			
 			ritorna=true;
 		
 		return ritorna;
