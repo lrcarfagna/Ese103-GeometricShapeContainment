@@ -1,4 +1,4 @@
-package geometricshape;
+package geometricshapes;
 /**
  * 
  * @author Carfagna Lorenzo

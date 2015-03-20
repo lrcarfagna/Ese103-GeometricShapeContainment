@@ -1,6 +1,6 @@
 package ese103;
 
-import geometricshape.*;
+import geometricshapes.*;
 /**
  * 
  * @author Lorenzo Carfagna
@@ -16,19 +16,19 @@ public class Ese103 {
 		Circle a,b,c;
 		
 		Circle cerchi[] = new Circle[4];
-//--------------------------------------------------------------TEST 1 CONTROLLO COSTRUTTORE E METODI GETTER----------------------------------------------------------------------------------
+//--------------------------------------------------------------TEST 1 CONTROLLO COSTRUTTORE----------------------------------------------------------------------------------
 		
 		try{
 			a = new Circle(0,0,0);
-			throw new Exception("Errore nell'implementazione di Costruttore");
+			throw new Exception("Test 1 NON SUPERATO Errore nell'implementazione di Costruttore");
 		}
 		catch(IllegalArgumentException e){
-			System.out.println("Test numero 1 VERIFICATO");
+			System.out.println("Test numero 1 SUPERATO");
 		}
 
 		cerchi[0]= new Circle(2,2,1);
 		
-		
+//--------------------------------------------------------------TEST >1 CONTROLLO COSTRUTTORE E METODI GETTER---------------------------------------------------------		
 		controllaValore(2,2,cerchi[0].getXC());
 	    controllaValore(3,2,cerchi[0].getYC());
 	    controllaValore(4,1,cerchi[0].getR());
@@ -38,6 +38,8 @@ public class Ese103 {
 	    cerchi[1]= new Circle(3,3,1);
 		cerchi[2]= new Circle(5,6,1);
 		cerchi[3]= new Circle(2,2,2);
+		
+		System.out.println("Test numero 5 , Contains va verificato manualmente");
 		
 		for(i=0;i<cerchi.length;i++){
 			a=cerchi[i];
@@ -50,7 +52,7 @@ public class Ese103 {
 		
 		
 		
-//---------------------------------------------------TEST 10 CONTROLLO COORDINATE BOUNDING BOX--------------------------------------
+//---------------------------------------------------TEST 10 CONTROLLO COORDINATE BOUNDING BOX----------------------------------------------------------
 		
 		controllaValore(11,1,cerchi[0].getXMin());
 		controllaValore(12,1,cerchi[0].getYMin());
@@ -68,14 +70,14 @@ public class Ese103 {
 	    controllaValore(23,5,cerchi[0].getR());
 	    
 	    
-	    //TEST NUMERO 24 --------> RAGGIO NEGATIVO
+//---------------------------------------------------TEST NUMERO 24 -------->CONTROLLO setR(RAGGIO NEGATIVO)----------------------------------------------------------------
 	    try {
 	    	cerchi[0].setR(-1);
 	    	
 	    	throw new Exception("Errore nell'implementazione di setR");
 	    	}
 	    	catch(IllegalArgumentException e) {
-	    		System.out.println("Test numero 24 VERIFICATO");
+	    		System.out.println("Test numero 24 SUPERATO");
 	    	}
 	    
 //----------------------------------------------------TEST 30 CONTROLLO METODO equals(Obj)------------------------------------------------------------------------    
@@ -93,7 +95,7 @@ public class Ese103 {
 	 */
 	static void controllaValore(int numeroTest, double valoreAtteso, double valoreRicevuto) throws Exception{
 		
-		String Messaggio="Test numero "+numeroTest+" VERIFICATO";
+		String Messaggio="Test numero "+numeroTest+" SUPERATO";
 		
 		if(valoreAtteso!=valoreRicevuto){
 			throw new Exception("ERRORE! Test numero  "+numeroTest+"  Valore atteso:"+valoreAtteso+" Valore restituito:"+valoreRicevuto);
@@ -103,7 +105,7 @@ public class Ese103 {
 	
 	static void controllaVerita(int numeroTest, boolean valoreAtteso, boolean valoreRicevuto) throws Exception{
 		
-		String Messaggio="Test numero "+numeroTest+" VERIFICATO";
+		String Messaggio="Test numero "+numeroTest+" SUPERATO";
 			
 		if(valoreAtteso!=valoreRicevuto){
 			throw new Exception("ERRORE! Test numero  "+numeroTest+"  Valore atteso:"+valoreAtteso+" Valore restituito:"+valoreRicevuto);
