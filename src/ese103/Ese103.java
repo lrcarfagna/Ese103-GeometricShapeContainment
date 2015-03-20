@@ -15,8 +15,7 @@ public class Ese103 {
 		// --------------------------------------------------------------TEST 1 CONTROLLO COSTRUTTORE----------------------------------------------------------------------------------
 		try {
 			a = new Circle(0, 0, 0);
-			throw new Exception(
-					"Test 1 NON SUPERATO Errore nell'implementazione di Costruttore");
+			throw new Exception("Test 1 NON SUPERATO Errore nell'implementazione di Costruttore");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Test numero 1 SUPERATO");
 		}
@@ -125,6 +124,16 @@ public class Ese103 {
 				controllaValore(61, 4, cerchi[0].getXC());
 				controllaValore(62, 3, cerchi[0].getYC());
 				controllaValore(63, 5, cerchi[0].getR());
+				
+      // ----------------------------------------------------TEST 64 CONTROLLO setL(l) con l<0------------------------------------------------------------------------
+				try{
+					triangoli[0].setL(0);
+					throw new Exception("Test 64 NON SUPERATO, ERRORE setL(l), ammesso l<=0");
+				}
+				catch(IllegalArgumentException e){
+					System.out.println("Test numero 64 SUPERATO");
+				}
+				
 				
 	  // ----------------------------------------------------TEST 70 CONTROLLO METODO equals(Obj) TRIANGLE ------------------------------------------------------------------------
 				t1 = new Triangle(4, 3, 5);                  // imposto campi di t1 uguali a quelli di// triangoli[0]
