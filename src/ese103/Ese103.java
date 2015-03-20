@@ -57,7 +57,7 @@ public class Ese103 {
 		controllaValore(11,1,cerchi[0].getXMin());
 		controllaValore(12,1,cerchi[0].getYMin());
 		controllaValore(13,3,cerchi[0].getXMax());
-		controllaValore(14,3,cerchi[0].getXMax());
+		controllaValore(14,3,cerchi[0].getYMax());
 		
 //----------------------------------------------------TEST 20 CONTROLLO METODI SETTER------------------------------------------------------------------------	
 		
@@ -87,6 +87,8 @@ public class Ese103 {
 		controllaVerita(31,false,cerchi[0].equals(cerchi[1]));  //controllo campi differenti
 		controllaVerita(32,true,cerchi[0].equals(cerchi[0]));   //controllo stessa istanza
 		controllaVerita(33,true,cerchi[0].equals(c));           //controllo campi uguali
+		
+		System.out.println("Test completato, sembra che vada tutto bene!");
 		
 	}
 	
