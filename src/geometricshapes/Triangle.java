@@ -63,7 +63,7 @@ public class Triangle {
 	}
 
 	/**
-	 * Setta xv come coordinata X dell'angolo in basso a sinistra del triangolo
+	 * Setta xv come coordinata X del vertice in basso a sinistra del triangolo
 	 * equilatero
 	 * 
 	 * @param xv
@@ -83,7 +83,7 @@ public class Triangle {
 	}
 
 	/**
-	 * Setta xy come coordinata Y dell'angolo in basso a sinistra del triangolo
+	 * Setta xy come coordinata Y del vertice in basso a sinistra del triangolo
 	 * equilatero
 	 * 
 	 * @param yv
@@ -115,7 +115,7 @@ public class Triangle {
 	}
 
 	/**
-	 * Restituisce la coordinata X dell'angolo in basso a sinistra della
+	 * Restituisce la coordinata X del vertice in basso a sinistra della
 	 * bounding box
 	 * 
 	 * @return
@@ -127,7 +127,7 @@ public class Triangle {
 	}
 
 	/**
-	 * Restituisce la coordinata X dell'angolo in alto a destra della bounding
+	 * Restituisce la coordinata X del vertice in alto a destra della bounding
 	 * box
 	 * 
 	 * @return
@@ -139,7 +139,7 @@ public class Triangle {
 	}
 
 	/**
-	 * Restituisce la coordinata Y dell'angolo in basso a sinistra della
+	 * Restituisce la coordinata Y del vertice in basso a sinistra della
 	 * bounding box
 	 * 
 	 * @return
@@ -151,7 +151,7 @@ public class Triangle {
 	}
 
 	/**
-	 * Restituisce la coordinata Y dell'angolo in alto a destra della bounding
+	 * Restituisce la coordinata Y del vertice in alto a destra della bounding
 	 * box
 	 * 
 	 * @return
