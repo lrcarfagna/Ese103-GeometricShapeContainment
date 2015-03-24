@@ -1,6 +1,6 @@
 package geometricshapes;
 
-public class Triangle {
+public class Triangle extends GeometricShape{
 
 	private double xV;
 	private double yV;
@@ -23,35 +23,6 @@ public class Triangle {
 
 		this.l = l;
 	}
-	
-	/**
-	 * Restituisce VERO se la bounding box dell'oggetto Triangle invocante CONTIENE
-	 * quella dell'oggetto Triangle ricevuto come parametro.
-	 * @param triangolo
-	 * @return
-	 */
-	public boolean contains(Triangle triangolo) {
-		boolean ritorna = false;
-		if ((this.getXMin() <= triangolo.getXMin() && this.getYMin() <= triangolo.getYMin())
-			&& (this.getXMax() >= triangolo.getXMax() && this.getYMax() >= triangolo.getYMax()))
-			ritorna = true;
-		return ritorna;
-		}
-	
-	/**
-	 * Restituisce VERO se la bounding box dell'oggetto Triangle invocante CONTIENE
-	 * quella dell'oggetto Circle ricevuto come parametro.
-	 * @param cerchio
-	 * @return
-	 */
-	public boolean contains(Circle cerchio) {
-		boolean ritorna = false;
-		if ((this.getXMin() <= cerchio.getXMin() && this.getYMin() <= cerchio.getYMin())
-			&& (this.getXMax() >= cerchio.getXMax() && this.getYMax() >= cerchio.getYMax()))
-			ritorna = true;
-		return ritorna;
-		}
-
 	/**
 	 * Resituisce la coordinata X del vertice in basso a sinistra del triangolo
 	 * equilatero
@@ -120,6 +91,7 @@ public class Triangle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getXMin() {
 
 		return this.xV;
@@ -132,6 +104,7 @@ public class Triangle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getXMax() {
 
 		return this.xV + this.l;
@@ -144,6 +117,7 @@ public class Triangle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getYMin() {
 
 		return this.yV;
@@ -156,15 +130,18 @@ public class Triangle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getYMax() {
 
 		return this.yV + this.l * Math.sqrt(3) / 2;
 
 	}
-
+   /**
+    * Restituisce la stringa formattata per il triangolo
+    */
 	@Override
 	public String toString() {
-		return "Triangolo [xV=" + xV + ", yV=" + yV + ", l=" + l + "]";
+		return "Il triangolo [xV=" + xV + ", yV=" + yV + ", l=" + l + "]";
 	}
 
 	@Override

@@ -5,7 +5,7 @@ package geometricshapes;
  * @author Carfagna Lorenzo
  *
  */
-public class Circle {
+public class Circle extends GeometricShape{
 	private double xC;
 	private double yC;
 	private double r;
@@ -88,6 +88,7 @@ public class Circle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getXMin() {
 		return this.xC - this.r;
 	}
@@ -98,6 +99,7 @@ public class Circle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getYMin() {
 		return this.yC - this.r;
 	}
@@ -108,6 +110,7 @@ public class Circle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getXMax() {
 		return this.xC + this.r;
 	}
@@ -118,6 +121,7 @@ public class Circle {
 	 * 
 	 * @return
 	 */
+	@Override
 	public double getYMax() {
 		return this.yC + this.r;
 	}
@@ -159,39 +163,13 @@ public class Circle {
 			return false;
 		return true;
 	}
-
+	
+   /**
+   * Restituisce la stringa formattata per il cerchio.
+   */
 	@Override
 	public String toString() {
-		return "Coordinate centro: (" + this.xC + "," + this.yC + ") e raggio="
+		return "Il cerchio con coordinate centro: (" + this.xC + "," + this.yC + ") e raggio="
 				+ this.r;
-	}
-
-	/**
-	 * Restituisce VERO se la bounding box dell'oggetto invocante CONTIENE
-	 * quella dell'oggetto ricevuto come parametro.
-	 * 
-	 * @param cerchio
-	 * @return
-	 */
-	public boolean contains(Circle cerchio) {
-		boolean ritorna = false;
-		if ((this.getXMin() <= cerchio.getXMin() && this.getYMin() <= cerchio.getYMin())
-			&& (this.getXMax() >= cerchio.getXMax() && this.getYMax() >= cerchio.getYMax()))
-			ritorna = true;
-		return ritorna;
-	}
-	/**
-	 * Restituisce VERO se la bounding box dell'oggetto invocante CONTIENE
-	 * quella dell'oggetto ricevuto come parametro.
-	 * 
-	 * @param cerchio
-	 * @return
-	 */
-	public boolean contains(Triangle triangolo) {
-		boolean ritorna = false;
-		if ((this.getXMin() <= triangolo.getXMin() && this.getYMin() <= triangolo.getYMin())
-			&& (this.getXMax() >= triangolo.getXMax() && this.getYMax() >= triangolo.getYMax()))
-			ritorna = true;
-		return ritorna;
 	}
 }
