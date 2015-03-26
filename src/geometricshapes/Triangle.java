@@ -141,7 +141,7 @@ public class Triangle extends GeometricShape{
     */
 	@Override
 	public String toString() {
-		return "Il triangolo [xV=" + xV + ", yV=" + yV + ", l=" + l + "]";
+		return "Triangolo [xV=" + xV + ", yV=" + yV + ", l=" + l + "]";
 	}
 
 	@Override

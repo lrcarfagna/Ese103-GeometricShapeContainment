@@ -169,7 +169,7 @@ public class Circle extends GeometricShape{
    */
 	@Override
 	public String toString() {
-		return "Il cerchio con coordinate centro: (" + this.xC + "," + this.yC + ") e raggio="
+		return "Cerchio con coordinate centro: (" + this.xC + "," + this.yC + ") e raggio="
 				+ this.r;
 	}
 }

@@ -4,10 +4,17 @@ public class Rectangle extends GeometricShape {
 
 	protected double xV;
 	protected double yV;
-	protected double xSideLenght;
-	protected double ySideLenght;
+	protected double xSideLength;
+	protected double ySideLength;
 	
-	
+	/**
+	 * 
+	 * @param xV
+	 * @param yV
+	 * @param xSideLenght
+	 * @param ySideLenght
+	 * Inizializza i campi dell'oggetto a xV,yV,xSideLenght e ySideLenght
+	 */
 	public Rectangle(double xV,double yV,double xSideLenght,double ySideLenght){
 		this.xV=xV;
 		this.yV=yV;
@@ -15,54 +22,80 @@ public class Rectangle extends GeometricShape {
 			throw new IllegalArgumentException("I lati devono essere maggiori di 0");
 		}
 		else{
-			this.xSideLenght=xSideLenght;
-			this.ySideLenght=ySideLenght;
+			this.xSideLength=xSideLenght;
+			this.ySideLength=ySideLenght;
 		}
 		
 	}
-	
+	/**
+	 * Costruttore senza parametri, utilizzato in Square
+	 */
 	protected Rectangle(){}
 
-
+	/**
+	 * restituisce la coordinata x del vertice in basso a sinistra
+	 * @return
+	 */
 	public double getXV() {
 		return xV;
 	}
 
-
+	/**
+	 * setta la coordinata x del vertice in basso a sinistra a xV
+	 * @param xV
+	 */
 	public void setXV(double xV) {
 		this.xV = xV;
 	}
 
-
+	/**
+	 * restituisce la coordinata y del vertice in basso a sinistra
+	 * @return
+	 */
 	public double getYV() {
 		return yV;
 	}
 
-
+	/**
+	 * setta la coordinata y del vertice in basso a sinistra a yV
+	 * @param yV
+	 */
 	public void setYV(double yV) {
 		this.yV = yV;
 	}
 
-
-	public double getXSideLenght() {
-		return xSideLenght;
+	/**
+	 * restituisce la lunghezza del lato parallelo all'asse delle ascisse
+	 * @return
+	 */
+	public double getXSideLength() {
+		return xSideLength;
 	}
 
-
-	public void setXSideLenght(double xSideLenght) {
+	/**
+	 * setta la lunghezza del lato parallelo all'asse delle ascisse a xSideLenght ricevuto come parametro
+	 * @param xSideLenght
+	 */
+	public void setXSideLength(double xSideLenght) {
 		if(xSideLenght<=0)throw new IllegalArgumentException("I lato parallelo all'asse X deve essere maggiore di 0");
-		else this.xSideLenght = xSideLenght;
+		else this.xSideLength = xSideLenght;
 	}
 
-
-	public double getYSideLenght() {
-		return ySideLenght;
+	/**
+	 * restituisce la lunghezza del lato parallelo all'asse delle ordinate
+	 * @return
+	 */
+	public double getYSideLength() {
+		return ySideLength;
 	}
 
-
-	public void setYSideLenght(double ySideLenght) {
+	/**
+	 * setta la lunghezza del lato parallelo all'asse delle ordinate a ySideLenght ricevuto come parametro
+	 * @param ySideLenght
+	 */
+	public void setYSideLength(double ySideLenght) {
 		if(ySideLenght<=0)throw new IllegalArgumentException("I lato parallelo all'asse Y deve essere maggiore di 0");
-		else this.ySideLenght = ySideLenght;
+		else this.ySideLength = ySideLenght;
 	}
 	
 
@@ -72,11 +105,11 @@ public class Rectangle extends GeometricShape {
 		final int prime = 31;
 		int result = 1;
 		long temp;
-		temp = Double.doubleToLongBits(xSideLenght);
+		temp = Double.doubleToLongBits(xSideLength);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(xV);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(ySideLenght);
+		temp = Double.doubleToLongBits(ySideLength);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(yV);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -93,47 +126,57 @@ public class Rectangle extends GeometricShape {
 		if (getClass() != obj.getClass())
 			return false;
 		Rectangle other = (Rectangle) obj;
-		if (Double.doubleToLongBits(xSideLenght) != Double
-				.doubleToLongBits(other.xSideLenght))
+		if (Double.doubleToLongBits(xSideLength) != Double
+				.doubleToLongBits(other.xSideLength))
 			return false;
 		if (Double.doubleToLongBits(xV) != Double.doubleToLongBits(other.xV))
 			return false;
-		if (Double.doubleToLongBits(ySideLenght) != Double
-				.doubleToLongBits(other.ySideLenght))
+		if (Double.doubleToLongBits(ySideLength) != Double
+				.doubleToLongBits(other.ySideLength))
 			return false;
 		if (Double.doubleToLongBits(yV) != Double.doubleToLongBits(other.yV))
 			return false;
 		return true;
 	}
 
-
+	/**
+	 * restituisce una stringa formattata per i rettangoli
+	 */
 	@Override
 	public String toString() {
-		return "Rettangolo [xV=" + xV + ", yV=" + yV + ", xSideLenght="+ xSideLenght + ", ySideLenght=" + ySideLenght + "]";
+		return "Rettangolo [xV=" + xV + ", yV=" + yV + ", xSideLenght="+ xSideLength + ", ySideLenght=" + ySideLength + "]";
 	}
 
-
+	/**
+	 * restituisce la coordinata x del vertice in basso a sinistra della bounding box
+	 */
 	@Override
 	double getXMin() {
-		return this.xV;
+		return xV;
 	}
 
-
+	/**
+	 * restituisce la coordinata y del vertice in basso a sinistra della bounding box
+	 */
 	@Override
 	double getYMin() {
-		return this.yV;
+		return yV;
 	}
 
-
+	/**
+	 * restituisce la coordinata x del vertice in alto a destra della bounding box
+	 */
 	@Override
 	double getXMax() {
-		return xV+xSideLenght;
+		return xV+xSideLength;
 	}
 
-
+	/**
+	 * restituisce la coordinata y del vertice in alto a destra della bounding box
+	 */
 	@Override
 	double getYMax() {
-		return yV+ySideLenght;
+		return yV+ySideLength;
 	}
 }
 
