@@ -2,10 +2,10 @@ package geometricshapes;
 
 public class Rectangle extends GeometricShape {
 
-	protected double xV;
-	protected double yV;
-	protected double xSideLength;
-	protected double ySideLength;
+	private double xV;
+	private double yV;
+	private double xSideLength;
+	private double ySideLength;
 	
 	/**
 	 * 

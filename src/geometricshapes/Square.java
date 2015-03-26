@@ -12,10 +12,10 @@ public class Square extends Rectangle{
 		
 		if(l<=0) throw new IllegalArgumentException("Il lato del quadrato deve essere maggiore di 0");
 		else{
-				this.xSideLength=l;
-				this.ySideLength=l;
-				this.xV=xV;
-				this.yV=yV;
+				this.setXSideLength(l);
+				this.setYSideLength(l);
+				this.setXV(xV);
+				this.setYV(yV);
 		}
 		
 	}
@@ -37,7 +37,7 @@ public class Square extends Rectangle{
 	 * @return
 	 */
 	public double getL(){
-		return this.ySideLength;
+		return this.getYSideLength();
 	}
 	
 	/**
@@ -45,7 +45,7 @@ public class Square extends Rectangle{
 	 */
 	@Override
 	public String toString() {
-		return "Quadrato [xV=" + xV + ", yV=" + yV + ", l="+ xSideLength+"]";
+		return "Quadrato [xV=" + this.getXV() + ", yV=" + this.getYV() + ", l="+ this.getXSideLength()+"]";
 	}
 	
 	/**
@@ -57,10 +57,10 @@ public class Square extends Rectangle{
 		 * TUTTI E DUE I LATI ASSUMONO IL VALORE DI l PER  MANTENERE LA COERENZA DELLO STATO
 		 */
 		if(l <= 0)
-			throw new IllegalArgumentException("The length of the side must be positive");
+			throw new IllegalArgumentException("La lunghezza del lato deve essere maggiore di 0");
 			else {
-				this.xSideLength = l;
-				this.ySideLength = l;
+				super.setXSideLength(l);
+				super.setYSideLength(l);
 			}
 	}
 	
@@ -73,10 +73,10 @@ public class Square extends Rectangle{
 		 * TUTTI E DUE I LATI ASSUMONO IL VALORE DI l PER  MANTENERE LA COERENZA DELLO STATO
 		 */
 		if(l <= 0)
-			throw new IllegalArgumentException("The length of the side must be positive");
+			throw new IllegalArgumentException("La lunghezza del lato deve essere maggiore di 0");
 			else {
-				this.xSideLength = l;
-				this.ySideLength = l;
+				super.setXSideLength(l);
+				super.setYSideLength(l);
 			}
 	}
 	
